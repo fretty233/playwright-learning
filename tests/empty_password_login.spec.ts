@@ -5,5 +5,5 @@ test('empty password login', async ({ page }) => {
   await page.locator('#user-name').fill('standard_user');
   await page.locator('#password').fill('');
   await page.locator('#login-button').click();
-  await expect(page).toHaveURL(/inventory/);
+  await expect(page.locator('[data-test="error"]')).toBeVisible();
 });

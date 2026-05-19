@@ -5,5 +5,5 @@ test('invalid login', async ({ page }) => {
   await page.locator('#user-name').fill('wrong');
   await page.locator('#password').fill('wrong');
   await page.locator('#login-button').click();
-  await expect(page).toHaveURL(/inventory/);
+  await expect(page.locator('[data-test="error"]')).toBeVisible();
 });
