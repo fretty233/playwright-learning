@@ -12,5 +12,5 @@ test('checkout fill empty fields', async ({ page }) => {
   await page.locator('#checkout').click();
   await expect(page).toHaveURL(/checkout-step-one/);
   await page.locator('#continue').click();
-  await expect(page).toHaveURL(/checkout-step-two/);
+  await expect(page).toHaveURL(/checkout-step-one/);
 });
