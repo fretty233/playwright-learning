@@ -11,9 +11,9 @@ test('checkout', async ({ page }) => {
   await expect(page.locator('.cart_item')).toBeVisible();
   await page.locator('#checkout').click();
   await expect(page).toHaveURL(/checkout-step-one/);
-  await page.locator('#first-name').fill('fretty');
-  await page.locator('#last-name').fill('sil');
-  await page.locator('#postal-code').fill('12345');
+  await page.locator('#first-name').fill('firstName');
+  await page.locator('#last-name').fill('lastName');
+  await page.locator('#postal-code').fill('postalCode');
   await page.locator('#continue').click();
   await expect(page).toHaveURL(/checkout-step-two/);
   await page.locator('#finish').click();
